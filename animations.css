@@ -1,0 +1,394 @@
+
+/* ========================================
+   ADVANCED ANIMATIONS & INTERACTIONS
+   Philip Wright Professional Portfolio
+   ======================================== */
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Loading animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes goldShimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+}
+
+/* Page load animations */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hero section enhanced animations */
+.hero h1 {
+    animation: fadeInUp 1.2s ease-out 0.2s both;
+}
+
+.hero .subtitle {
+    animation: fadeInUp 1.2s ease-out 0.4s both;
+}
+
+.hero .cta-button {
+    animation: fadeInUp 1.2s ease-out 0.6s both;
+}
+
+/* Enhanced button hover effects */
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: left 0.6s;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(201, 176, 55, 0.4);
+}
+
+/* Card hover animations */
+.work-card, .project-card {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform-origin: center;
+}
+
+.work-card:hover, .project-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.work-card:hover .card-overlay,
+.project-card:hover .card-overlay {
+    opacity: 1;
+}
+
+/* Enhanced card overlay */
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        45deg,
+        rgba(201, 176, 55, 0.9),
+        rgba(255, 215, 0, 0.8)
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Text animations */
+.typewriter {
+    overflow: hidden;
+    border-right: 3px solid #c9b037;
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #c9b037; }
+}
+
+/* Navigation animations */
+nav {
+    transition: all 0.3s ease;
+}
+
+nav.scrolled {
+    background: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+nav a {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background: linear-gradient(45deg, #c9b037, #ffd700);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Skills/Stats counter animation */
+.counter {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #c9b037;
+}
+
+@keyframes countUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.counter.animate {
+    animation: countUp 1s ease-out;
+}
+
+/* Parallax scrolling effect */
+.parallax-container {
+    overflow: hidden;
+}
+
+.parallax-element {
+    transition: transform 0.1s linear;
+}
+
+/* Loading spinner */
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(201, 176, 55, 0.3);
+    border-radius: 50%;
+    border-top-color: #c9b037;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Progress bars */
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(45deg, #c9b037, #ffd700);
+    border-radius: 2px;
+    transform: translateX(-100%);
+    transition: transform 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.progress-fill.animate {
+    transform: translateX(0);
+}
+
+/* Floating elements */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.floating {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Staggered animations for lists */
+.stagger-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.stagger-item:nth-child(1) { transition-delay: 0.1s; }
+.stagger-item:nth-child(2) { transition-delay: 0.2s; }
+.stagger-item:nth-child(3) { transition-delay: 0.3s; }
+.stagger-item:nth-child(4) { transition-delay: 0.4s; }
+.stagger-item:nth-child(5) { transition-delay: 0.5s; }
+.stagger-item:nth-child(6) { transition-delay: 0.6s; }
+
+.stagger-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Image reveal animations */
+.image-reveal {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-reveal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, #c9b037, transparent);
+    z-index: 2;
+    transition: left 1s ease;
+}
+
+.image-reveal.animate::before {
+    left: 100%;
+}
+
+/* Responsive animations */
+@media (max-width: 768px) {
+    .animate-on-scroll {
+        transform: translateY(20px);
+    }
+    
+    .work-card:hover, .project-card:hover {
+        transform: translateY(-4px) scale(1.01);
+    }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .btn-primary {
+        border: 2px solid currentColor;
+    }
+    
+    .card-overlay {
+        background: rgba(0, 0, 0, 0.8);
+    }
+}
+
+/* Enhanced focus indicators */
+.btn-primary:focus,
+nav a:focus,
+.work-card:focus,
+.project-card:focus {
+    outline: 3px solid #c9b037;
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* Custom cursor on interactive elements */
+.btn-primary,
+.work-card,
+.project-card,
+nav a {
+    cursor: pointer;
+}
+
+/* Video player enhancements */
+.video-container {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.video-container:hover {
+    transform: scale(1.02);
+}
+
+.video-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+    pointer-events: none;
+}
+
+.video-container:hover::after {
+    border-color: #c9b037;
+}

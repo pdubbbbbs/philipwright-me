@@ -45,6 +45,8 @@
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animations.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     
@@ -65,6 +67,16 @@
         "email": "philip@philipwright.me"
     }
     </script>
+
+    <!-- Google Analytics (replace GA_MEASUREMENT_ID with your actual ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    
 </head>
 <body>
     <header>
@@ -190,7 +202,7 @@
             <div class="container">
                 <h2>Recent Work</h2>
                 <div class="work-grid">
-                    <div class="work-card">
+                    <div class="work-card stagger-item">
                         <div class="work-card-video">
                             <!-- YouTube Video Thumbnail/Embed -->
                             <div class="video-container-small">
@@ -212,7 +224,7 @@
                             <a href="#" class="work-card-link">View Project</a>
                         </div>
                     </div>
-                    <div class="work-card">
+                    <div class="work-card stagger-item">
                         <div class="work-card-video">
                             <div class="video-container-small">
                                 <iframe 
@@ -233,7 +245,7 @@
                             <a href="#" class="work-card-link">View Project</a>
                         </div>
                     </div>
-                    <div class="work-card">
+                    <div class="work-card stagger-item">
                         <div class="work-card-video">
                             <div class="video-container-small">
                                 <iframe 
@@ -290,5 +302,7 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="animations.js"></script>
+
 </body>
 </html>

@@ -863,12 +863,3 @@ if __name__ == "__main__":
     print("📚 Check ANIMATION-GUIDE.md for usage instructions")
     print("🎨 Your website now has professional-grade animations")
     print("⚡ All animations are performance-optimized and accessible")
-"""
-    
-    with open('create-animations.py', 'w', encoding='utf-8') as file:
-        file.write(animation_js)
-    
-    print("✅ Created animation generation script")
-
-if __name__ == "__main__":
-    create_advanced_animations()
