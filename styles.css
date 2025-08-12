@@ -161,27 +161,28 @@ header {
 }
 
 .btn-primary {
-    background: #3498db;
-    color: white;
+    background: linear-gradient(45deg, #c9b037, #ffd700);
+    color: #1a1a1a;
+    box-shadow: 0 4px 15px rgba(201, 176, 55, 0.3);
 }
 
 .btn-primary:hover {
-    background: #2980b9;
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 25px rgba(201, 176, 55, 0.4);
+    background: linear-gradient(45deg, #ffd700, #c9b037);
 }
 
 .btn-secondary {
     background: transparent;
-    color: white;
-    border: 2px solid white;
+    color: #c9b037;
+    border: 2px solid #c9b037;
 }
 
 .btn-secondary:hover {
-    background: white;
-    color: #333;
+    background: #c9b037;
+    color: #1a1a1a;
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 25px rgba(201, 176, 55, 0.3);
 }
 
 /* Sections */
@@ -477,6 +478,14 @@ html {
     margin-bottom: 1rem;
     letter-spacing: -0.02em;
     color: white;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
 }
 
 .hero-subtitle {
