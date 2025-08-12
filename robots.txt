@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://philipwright.me/sitemap.xml
+
+# Optimize crawling
+Crawl-delay: 1
+
+# Block common bot paths
+Disallow: /assets/temp/
+Disallow: /_temp/
+Disallow: /serve.py
